@@ -20,12 +20,13 @@ const DatatablePage = () => {
       {label: 'NOME',field: 'name',sort: 'asc',width: 150},
       {label: 'CPF',field: 'cpf',sort: 'asc',width: 50},
       {label: 'TIPO DO PEDIDO',field: 'TipPed',sort: 'asc',width: 50},
+      {label: 'Valor',field: 'valor',sort: 'asc',width: 50},
       {label: 'TIPO DO PAGAMENTO',field: 'TipPag',sort: 'asc',width: 50},
       {label: 'CELULAR',field: 'cel',sort: 'asc',width: 200},
       {label: 'DATA DO PEDIDO ',field: 'datPed',sort: 'asc',width: 150},
       {label: 'DATA DO PAGAMENTO',field: 'datPag',sort: 'asc',width: 100},
-      {label: 'MENSAGEM DE PAGAMENTO',field: 'mens',sort: 'asc',width: 80},
       {label: 'STATUS DO PAGAMENTO',field: 'status',sort: 'asc',width: 80},
+      {label: 'MENSAGEM DE PAGAMENTO',field: 'mens',sort: 'asc',width: 80},
       {label: 'COMPROVANTE DO IUGU',field: 'url',sort: 'asc',width: 80}
 
     ],
@@ -68,11 +69,12 @@ const DatatablePage = () => {
     data["rows"].push(
       {
         id: ++indice,
-        name: pedido.pessoas[0]['NOME'],
-        cpf: pedido.pessoas[0]['CPF'],
+        name: pedido.pessoa.NOME,
+        cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
         TipPag:tipoP,
-        cel:pedido.pessoas[0]['CELULAR'],
+        valor:pedido.VALOR_TOTAL,
+        cel:pedido.pessoa.CELULAR,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
         datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
         mens:pedido.MENSAGEM_PAGAMENTO,

@@ -3,7 +3,6 @@ import { MDBDataTable } from 'mdbreact';
 import { format } from 'date-fns';
 import axios from 'axios';
 import * as GoIcons from "react-icons/go";
-import ReactHTMLTabletoExcel from 'react-html-table-to-excel'
 
 const DatatablePage = () => {
   const [informacoes, setInformacoes] = useState([]);
@@ -20,12 +19,13 @@ const DatatablePage = () => {
       {label: 'Nome',field: 'name',sort: 'asc',width: 150},
       {label: 'CPF',field: 'cpf',sort: 'asc',width: 50},
       {label: 'Tipo do Pedido',field: 'TipPed',sort: 'asc',width: 50},
+      {label: 'Valor',field: 'valor',sort: 'asc',width: 50},
       {label: 'Tipo do Pagamento',field: 'TipPag',sort: 'asc',width: 50},
       {label: 'Celular',field: 'cel',sort: 'asc',width: 200},
       {label: 'Data do Pedido ',field: 'datPed',sort: 'asc',width: 150},
       {label: 'Data do pagamento',field: 'datPag',sort: 'asc',width: 100},
-      {label: 'Mensagem de Pagamento',field: 'mens',sort: 'asc',width: 80},
       {label: 'Status do pagamento',field: 'status',sort: 'asc',width: 80},
+      {label: 'Mensagem de Pagamento',field: 'mens',sort: 'asc',width: 80},
       {label: 'Comprovante IUGU',field: 'url',sort: 'asc',width: 80}
 
     ],
@@ -68,11 +68,12 @@ const DatatablePage = () => {
     data["rows"].push(
       {
         id: ++indice,
-        name: pedido.pessoas[0]['NOME'],
-        cpf: pedido.pessoas[0]['CPF'],
+        name: pedido.pessoa.NOME,
+        cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
         TipPag:tipoP,
-        cel:pedido.pessoas[0]['CELULAR'],
+        valor:pedido.VALOR_TOTAL,
+        cel:pedido.pessoa.CELULAR,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
         datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
         mens:pedido.MENSAGEM_PAGAMENTO,
@@ -104,12 +105,5 @@ const DatatablePage = () => {
 
 export default DatatablePage;
  
-// <ReactHTMLTabletoExcel 
-//         id botaoexportaExcel
-//         className btn btn-primary
-//         table={data}
-//         filename pedidosexecel
-//         sheetpagina 
-//         buttonTextExecel
-//     />
+
 

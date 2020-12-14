@@ -18,7 +18,7 @@ const DatatablePage = () => {
   let data = {
     columns: [
       {label: 'Tipo do Pedido',field: 'TipPed',sort: 'asc',width: 50},
-      {label: 'Quantidade de pedidos',field: 'QntPed',sort: 'asc',width: 50},
+      {label: 'Quantidade de pedidos aprovados',field: 'QntPed',sort: 'asc',width: 50},
       {label: 'Valor Total',field: 'ValTotal',sort: 'asc',width: 150},
     ],   
     rows: []
@@ -30,19 +30,17 @@ const DatatablePage = () => {
       {
         TipPed:tradutor,
         QntPed:pedido.Quantidade_de_Pedido + " Pedidos",
-        ValTotal:pedido.Valor_Total + " R$",
+        ValTotal: " R$ " + pedido.Valor_Total,
       }
     )
   });
   const mudarNomeInicial=(evento)=>{
     const novoValor=evento.target.value;
-    console.log(novoValor)
     setInicial(novoValor);
   }
 
   const mudarNomeFinal=(evento)=>{
     const novoValor=evento.target.value;
-    console.log(novoValor)
     setFinal(novoValor);
   }
 

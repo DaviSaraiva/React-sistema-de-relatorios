@@ -18,27 +18,27 @@ export const SidebarData=[
         cName:'nav-text'
     },
     {
-        title:'Créditos vendidos',
+        title:'Créditos Vendidos',
         path:  '/recargas',//caminho no caso
         icon:<AiIcons.AiFillProfile />,
         cName:'nav-text'
     },
 
     {
-        title:'Cartões vendidos',
+        title:'Cartões Vendidos',
         path:  '/cartao',//caminho no caso
         icon:<AiIcons.AiFillIdcard />,
         cName:'nav-text'
     },
     
     {
-        title:'Boletos não pagos',
+        title:'Boletos Não Pagos',
         path:  '/boletosnaopagos',//caminho no caso
         icon:<AiIcons.AiFillProfile />,
         cName:'nav-text'
     },
     {
-        title:'Boletos pagos',
+        title:'Boletos Pagos',
         path:  '/boletospagos',//caminho no caso
         icon:<AiIcons.AiFillProfile />,
         cName:'nav-text'
@@ -50,8 +50,14 @@ export const SidebarData=[
         cName:'nav-text'
     },
     {
-        title:'Relatório de créditos liberados',
-        path:  '/credliberados',//caminho no caso
+        title:'Relatório de Créditos Pagos',
+        path:  '/credpagos',//caminho no caso
+        icon:<AiIcons.AiFillProfile />,
+        cName:'nav-text'
+    },
+    {
+        title:'Relatório de Créditos Liberados',
+        path:  '/credLiberados',//caminho no caso
         icon:<AiIcons.AiFillProfile />,
         cName:'nav-text'
     },

@@ -1,8 +1,6 @@
-import React, { useEffect, useState} from 'react';
+  import React, { useEffect, useState} from 'react';
 import { MDBDataTable } from 'mdbreact';
 import axios from 'axios';
-
-
 
 const DatatablePage = () => {
   const [informacoes, setInformacoes] = useState([]);
@@ -18,7 +16,7 @@ const DatatablePage = () => {
   let data = {
     columns: [
       {label: 'Tipo do Pedido',field: 'TipPed',sort: 'asc',width: 50},
-      {label: 'Quantidade de pedidos',field: 'QntPed',sort: 'asc',width: 50},
+      {label: 'Quantidade de pedidos aprovados',field: 'QntPed',sort: 'asc',width: 50},
       {label: 'Valor Total',field: 'ValTotal',sort: 'asc',width: 150},
     ],   
     rows: []
@@ -30,7 +28,7 @@ const DatatablePage = () => {
       {
         TipPed:tradutor,
         QntPed:pedido.Quantidade_de_Pedido + " Pedidos",
-        ValTotal:pedido.Valor_Total + " R$",
+        ValTotal: " R$ " + pedido.Valor_Total,
       }
     )
   });
