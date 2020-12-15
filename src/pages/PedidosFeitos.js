@@ -65,8 +65,18 @@ const DatatablePage = () => {
     } 
 
     const linkConf = pedido.URL_PAGAMENTO;
-  let link= <a href={linkConf} target={"blank"}><GoIcons.GoLinkExternal />Comprovante</a>
+    let link= <a href={linkConf} target={"blank"}><GoIcons.GoLinkExternal />Comprovante</a>
     
+
+  const datapag= format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy');
+  let dt="";
+  if(datapag==='31/12/1969'){
+    dt='--/--/----';
+  }
+  else{
+    dt=datapag;
+  }
+
     data["rows"].push(
       {
         id: ++indice,
@@ -76,7 +86,7 @@ const DatatablePage = () => {
         cel:pedido.pessoa.CELULAR,
         TipPed:tradutor,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
-        datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
+        datPag:dt,
         mens:pedido.MENSAGEM_PAGAMENTO,
         status:status,
         Tip:tipoP,

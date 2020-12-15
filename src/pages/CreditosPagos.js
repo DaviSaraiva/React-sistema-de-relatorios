@@ -59,7 +59,15 @@ const DatatablePage = () => {
     }
     const linkConf = pedido.URL_PAGAMENTO;
     let link= <a href={linkConf} target={"blank"}><GoIcons.GoLinkExternal />Comprovante</a>
-      
+    
+    const datapag= format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy');
+    let dt="";
+    if(datapag==='31/12/1969'){
+      dt='--/--/----';
+    }
+    else{
+      dt=datapag;
+    }
     
     const tradutorPagemento=  pedido.TIPO_PAGAMENTO;
     let tipoP="";
@@ -81,10 +89,10 @@ const DatatablePage = () => {
         cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
         NumCart:pedido.pessoasbeneficio.NUMERO_CARTAO,
-        valor:pedido.VALOR_TOTAL,
+        valor:" R$ " + pedido.VALOR_TOTAL,
         TipPag:tipoP,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
-        datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
+        datPag:dt,
         mens:pedido.MENSAGEM_PAGAMENTO,
         status:status,
         url:link,

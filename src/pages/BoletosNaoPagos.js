@@ -23,6 +23,7 @@ const DatatablePage = () => {
       {label: 'Tipo do Pagamento',field: 'TipPag',sort: 'asc',width: 50},
       {label: 'Celular',field: 'cel',sort: 'asc',width: 200},
       {label: 'Data do Pedido ',field: 'datPed',sort: 'asc',width: 150},
+      {label: 'Data do pagamento',field: 'datPag',sort: 'asc',width: 100},
       {label: 'Status do pagamento',field: 'status',sort: 'asc',width: 80},
       {label: 'Mensagem de Pagamento',field: 'mens',sort: 'asc',width: 80},
 
@@ -61,6 +62,15 @@ const DatatablePage = () => {
       tipoP='Cartão de débito';
     } 
 
+    const datapag= format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy');
+    let dt="";
+    if(datapag==='31/12/1969'){
+      dt='--/--/----';
+    }
+    else{
+      dt=datapag;
+    }
+
     data["rows"].push(
       {
         id: ++indice,
@@ -71,6 +81,7 @@ const DatatablePage = () => {
         valor:pedido.VALOR_TOTAL,
         cel:pedido.pessoa.CELULAR,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
+        datPag:dt,
         mens:pedido.MENSAGEM_PAGAMENTO,
         status:status
       }

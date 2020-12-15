@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+  import React, { useEffect, useState} from 'react';
 import { MDBDataTable  } from 'mdbreact';
 import { format } from 'date-fns';
 import axios from 'axios';
@@ -72,6 +72,15 @@ const DatatablePage = () => {
     if (tradutorPagemento===3) {
       tipoP='Cartão de débito';
     } 
+
+    const datapag= pedido.DATA_PAGAMENTO;
+    let dt="";
+    if(datapag===null){
+      dt="sem data";
+    }
+    else{
+      dt=datapag;
+    }
     
     
     data["rows"].push(
@@ -81,10 +90,10 @@ const DatatablePage = () => {
         cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
         NumCart:pedido.pessoasbeneficio.NUMERO_CARTAO,
-        valor:pedido.VALOR_TOTAL,
+        valor:"R$ " + pedido.VALOR_TOTAL,
         TipPag:tipoP,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
-        datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
+        datPag:format(new Date(dt), 'dd/MM/yyyy'),
         mens:pedido.MENSAGEM_PAGAMENTO,
         status:status,
         url:link,
@@ -102,9 +111,7 @@ const DatatablePage = () => {
       hover
       responsive true
       data={data}
-      
-      
-     
+       
     />
     
     </div> 

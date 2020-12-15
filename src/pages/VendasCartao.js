@@ -66,6 +66,16 @@ const DatatablePage = () => {
     if (tradutorPagemento===3) {
       tipoP='Cartão de débito';
     } 
+
+  const datapag= format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy');
+  let dt="";
+  if(datapag==='31/12/1969'){
+    dt='--/--/----';
+  }
+  else{
+    dt=datapag;
+  }
+
     data["rows"].push(
       {
         id: ++indice,
@@ -73,10 +83,10 @@ const DatatablePage = () => {
         cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
         TipPag:tipoP,
-        valor:pedido.VALOR_TOTAL,
+        valor:"R$ " + pedido.VALOR_TOTAL,
         cel:pedido.pessoa.CELULAR,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
-        datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
+        datPag:dt,
         mens:pedido.MENSAGEM_PAGAMENTO,
         status:status,
         url:link

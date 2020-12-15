@@ -72,7 +72,7 @@ const DatatablePage = () => {
         cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
         TipPag:tipoP,
-        valor:pedido.VALOR_TOTAL,
+        valor:"R$ " + pedido.VALOR_TOTAL,
         cel:pedido.pessoa.CELULAR,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
         datPag:format(new Date(pedido.DATA_PAGAMENTO), 'dd/MM/yyyy'),
