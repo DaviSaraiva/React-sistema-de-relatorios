@@ -5,12 +5,12 @@ import * as AiIcons from "react-icons/ai";
 // import * as IoIcons from "react-icons/go";
 
 export const SidebarData=[
-    // {
-    //     title:'Home',
-    //     path:  '/',//caminho no caso
-    //     icon:<AiIcons.AiFillHome />,
-    //     cName:'nav-text'
-    // },
+    {
+        title:'Home',
+        path:  '/',//caminho no caso
+        icon:<AiIcons.AiFillHome />,
+        cName:'nav-text'
+    },
     {
         title:'Pedidos Feitos',
         path:  '/pedidosfeitos',//caminho no caso
@@ -44,7 +44,7 @@ export const SidebarData=[
         cName:'nav-text'
     },
     {
-        title:'Pagemanetos com Cartão',
+        title:'Pagamentos com Cartão',
         path:  '/pagamentoscartao',//caminho no caso
         icon:<AiIcons.AiFillProfile />,
         cName:'nav-text'
