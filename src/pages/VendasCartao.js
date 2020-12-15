@@ -53,7 +53,7 @@ const DatatablePage = () => {
     }
 
     const linkConf = pedido.URL_PAGAMENTO;
-  let link= <a href={linkConf} target={"_blank"}><GoIcons.GoLinkExternal />Comprovante</a>
+  let link= <a href={linkConf} target={"blank"}><GoIcons.GoLinkExternal />Comprovante</a>
     
     const tradutorPagemento=  pedido.TIPO_PAGAMENTO;
     let tipoP="";

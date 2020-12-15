@@ -51,7 +51,7 @@ const DatatablePage = () => {
       status='CANCELADO';
     }
     const linkConf = pedido.URL_PAGAMENTO;
-    let link= <a href={linkConf} target={"_blank"}><GoIcons.GoLinkExternal />COMPROVANTE</a>
+    let link= <a href={linkConf} target={"blank"}><GoIcons.GoLinkExternal />COMPROVANTE</a>
       
     
     const tradutorPagemento=  pedido.TIPO_PAGAMENTO;
