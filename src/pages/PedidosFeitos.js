@@ -115,4 +115,3 @@ const DatatablePage = () => {
 
 export default DatatablePage;
 
-

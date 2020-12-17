@@ -6,13 +6,17 @@ import Home from './pages/Home';
 import Tbl3 from './pages/PedidosFeitos';
 import Tbl4 from './pages/VendasCartao';
 import Tbl5 from './pages/Recargas';
-import Tbl6 from './pages/BoletosNaoPagos'
-import Tbl7 from './pages/BoletosPagos'
-import Tbl9 from './pages/PagamentoCartao'
-import Tbl10 from './pages/CreditosPagos'
-import Tbl11 from './pages/FinanceiroRecargas'
-import Tbl12 from './pages/FinaceiroCartao'
-import tbl13 from './pages/CreditosLiberados'
+import Tbl6 from './pages/BoletosNaoPagos';
+import Tbl7 from './pages/BoletosPagos';
+import Tbl9 from './pages/PagamentoCartao';
+import Tbl10 from './pages/CreditosPagos';
+//import Tbl11 from './pages/FinanceiroRecargas';
+//import Tbl12 from './pages/FinaceiroCartao';
+import tbl13 from './pages/CreditosLiberados';
+import Login from './pages/Login';
+import Tbl20 from './pages/TesteFianceiro'
+import StoreProvider from './components/Store/Provider';
+import RoutesPrivate from './components/Routes/Private/Private';
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
@@ -22,22 +26,25 @@ function App() {
   return (
     <>
      <Router>
-        <Navbar />
+       <StoreProvider>
+       <Navbar />
         <Switch>
-          
-          <Route path='/' exact component={Home}/>
-          <Route path='/pedidosfeitos' exact component={Tbl3}/>
-          <Route path='/cartao' component={Tbl4}/>
-          <Route path='/recargas' component={Tbl5}/>
-          <Route path='/boletosnaopagos' component={Tbl6}/>
-          <Route path='/boletospagos' component={Tbl7}/>
-          <Route path='/pagamentoscartao' component={Tbl9}/>
-          <Route path='/credpagos' component={Tbl10}/>
-          <Route path='/credLiberados' component={tbl13}/>
-          <Route path='/finrecargas' component={Tbl11}/>
-          <Route path='/finecartoes' component={Tbl12}/>
+          <Route path="/login" component={Login} />
+          <RoutesPrivate path='/' exact component={Home}/>
+          <RoutesPrivate path='/pedidosfeitos' exact component={Tbl3}/>
+          <RoutesPrivate path='/cartao' component={Tbl4}/>
+          <RoutesPrivate path='/recargas' component={Tbl5}/>
+          <RoutesPrivate path='/boletosnaopagos' component={Tbl6}/>
+          <RoutesPrivate path='/boletospagos' component={Tbl7}/>
+          <RoutesPrivate path='/pagamentoscartao' component={Tbl9}/>
+          <RoutesPrivate path='/credpagos' component={Tbl10}/>
+          <RoutesPrivate path='/credLiberados' component={tbl13}/>
+          {/* <RoutesPrivate path='/finrecargas' component={Tbl11}/>
+          <RoutesPrivate path='/finecartoes' component={Tbl12}/> */}
+          <RoutesPrivate path='/finaceirogeral' component={Tbl20}/>
 
         </Switch>
+       </StoreProvider> 
       </Router>  
     </>
   );

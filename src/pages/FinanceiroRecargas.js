@@ -1,4 +1,4 @@
-  import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import { MDBDataTable } from 'mdbreact';
 import axios from 'axios';
 
@@ -44,8 +44,7 @@ const DatatablePage = () => {
     setFinal(novoValor);
   }
 
-  const filtro=(evento)=>{
-    
+  const filtro=(evento)=>{  
     axios.post('http://139.162.233.71:8081/finaceiroRecarga',{'inicial':inicial,'final':final}).then(response => {
         setInformacoes(response.data)
     });
