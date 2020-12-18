@@ -121,10 +121,4 @@ const DatatablePage = () => {
 
 export default DatatablePage;
 
-// const linkConf = pedido.URL_PAGAMENTO;
-    // let link= "";
-    // if(link==='localhost:3000') {
-    //   link="Não ha link";
-    // } else {
-    //   link=<a href={linkConf} target={"_blank"}>Link de pagamento</a>;
 

@@ -34,13 +34,11 @@ const DatatablePage = () => {
   });
   const mudarNomeInicial=(evento)=>{
     const novoValor=evento.target.value;
-    console.log(novoValor)
     setInicial(novoValor);
   }
 
   const mudarNomeFinal=(evento)=>{
     const novoValor=evento.target.value;
-    console.log(novoValor)
     setFinal(novoValor);
   }
 

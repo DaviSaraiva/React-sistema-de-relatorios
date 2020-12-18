@@ -8,7 +8,6 @@ const DatatablePage = () => {
   const [informacoes, setInformacoes] = useState([]);
   useEffect(() => {
     axios.get('http://139.162.233.71:8081/boletosnaopagos').then(response => {
-      console.log(response)
         setInformacoes(response.data)
     })
 }, []);
@@ -87,7 +86,6 @@ const DatatablePage = () => {
       }
     )
   });
-  console.log(data)
 
   return (
     <div>
@@ -106,9 +104,3 @@ const DatatablePage = () => {
 
 export default DatatablePage;
 
-// const linkConf = pedido.URL_PAGAMENTO;
-    // let link= "";
-    // if(link==='localhost:3000') {
-    //   link="Não ha link";
-    // } else {
-    //   link=<a href={linkConf} target={"_blank"}>Link de pagamento</a>;

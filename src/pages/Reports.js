@@ -9,7 +9,6 @@ function Reports() {
 
   useEffect(() => {
       axios.get('http://localhost:8081/boletospagos').then(response => {
-        console.log(response)
           setInformacoes(response.data)
       })
   }, []);

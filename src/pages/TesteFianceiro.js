@@ -7,10 +7,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 
-
-
-
-
 const DatatablePage = () => {
   const [informacoes, setInformacoes] = useState([]);
   const [inicial, setInicial] = useState("2020-01-01");
@@ -38,7 +34,7 @@ const DatatablePage = () => {
        
   informacoes.forEach((pedido,indice) => {
     const tradutor =  pedido.TIPO_PEDIDO===0 ? 'Recarga' : 'Cartão'; 
-    
+
     const tradutorStatus=  pedido.STATUS_PAGAMENTO;
     let status="";
     if (tradutorStatus===0) {
@@ -53,6 +49,9 @@ const DatatablePage = () => {
     else if(tradutorStatus===9)  {
       status='Cancelado';
     }
+    else{
+      status="sem retorno";
+    }
 
     data["rows"].push(
       {
@@ -65,7 +64,6 @@ const DatatablePage = () => {
   });
   const mudarNomeInicial=(evento)=>{
     const novoValor=evento.target.value;
-    console.log(novoValor)
     setInicial(novoValor);
   }
 
@@ -77,13 +75,11 @@ const DatatablePage = () => {
 
   const mudarPedido=(evento)=>{
     const novo1=evento.target.value;
-    console.log(novo1)
     setTipo(novo1);
   }
 
   const mudarStatus=(evento)=>{
     const novo=evento.target.value;
-    console.log(novo)
     setStatus(novo);
   }
 

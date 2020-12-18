@@ -8,7 +8,6 @@ const DatatablePage = () => {
   const [informacoes, setInformacoes] = useState([]);
   useEffect(() => {
     axios.get('http://139.162.233.71:8081/cartao').then(response => {
-      console.log(response)
         setInformacoes(response.data)
     })
 }, []);
@@ -93,7 +92,6 @@ const DatatablePage = () => {
       }
     )
   });
-  console.log(data)
 
   return (
     <div>
