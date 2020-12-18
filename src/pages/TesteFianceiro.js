@@ -15,7 +15,7 @@ const DatatablePage = () => {
   const [status, setStatus] = useState("0");
 
   useEffect(() => {
-    axios.get('http://localhost:8081//finaceirogeral').then(response => {
+    axios.get('http://139.162.233.71:8081/finaceirogeral').then(response => {
         setInformacoes(response.data)
     })
 }, []);
@@ -84,7 +84,7 @@ const DatatablePage = () => {
   }
 
   const filtro=(evento)=>{
-    axios.post('http://localhost:8081/finaceirogeral',{'inicial':inicial,'final':final,'tipo':tipo,'status':status}).then(response => {
+    axios.post('http://139.162.233.71:8081/finaceirogeral',{'inicial':inicial,'final':final,'tipo':tipo,'status':status}).then(response => {
         setInformacoes(response.data)
     });
     
