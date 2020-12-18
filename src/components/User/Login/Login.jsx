@@ -9,8 +9,8 @@ function initialState(){
 }
 
 function login({ user, password}) {
-  if(user==='admin' && password==='admin'){
-    return {token:'1234'};
+  if(user==='usuariomobi' && password==='transmobi52!@#'){
+    return {token:'jhdhcjhbdajcbndaicbni'};
   }
   return {error:'Usuario ou senha incorretos'};
 }
@@ -39,7 +39,9 @@ const UserLogin = () => {
     }
 
   return (
-    <div className="user-login">
+    <div  class="container">
+      <div class="row">
+      <div className="user-login">
       <h1 className="user-login__title">Acessar o Sistema</h1>
       <form onSubmit={onSubmit}>
         <div className="user-login__form-control">
@@ -61,6 +63,10 @@ const UserLogin = () => {
         </UIButton>
       </form>
     </div>
+      </div>
+   
+    </div>
+    
   );
 };
 

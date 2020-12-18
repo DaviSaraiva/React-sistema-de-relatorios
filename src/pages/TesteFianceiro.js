@@ -19,7 +19,7 @@ const DatatablePage = () => {
   const [status, setStatus] = useState("0");
 
   useEffect(() => {
-    axios.get('http://139.162.233.71:8081/finaceirogeral').then(response => {
+    axios.get('http://localhost:8081//finaceirogeral').then(response => {
         setInformacoes(response.data)
     })
 }, []);
@@ -38,6 +38,7 @@ const DatatablePage = () => {
        
   informacoes.forEach((pedido,indice) => {
     const tradutor =  pedido.TIPO_PEDIDO===0 ? 'Recarga' : 'Cartão'; 
+    
     const tradutorStatus=  pedido.STATUS_PAGAMENTO;
     let status="";
     if (tradutorStatus===0) {
@@ -87,7 +88,7 @@ const DatatablePage = () => {
   }
 
   const filtro=(evento)=>{
-    axios.post('http://139.162.233.71:8081/finaceirogeral',{'inicial':inicial,'final':final,'tipo':tipo,'status':status}).then(response => {
+    axios.post('http://localhost:8081/finaceirogeral',{'inicial':inicial,'final':final,'tipo':tipo,'status':status}).then(response => {
         setInformacoes(response.data)
     });
     
@@ -112,7 +113,7 @@ const DatatablePage = () => {
         </div>
         <div class="col-sm">
         <FormControl>
-        <FormLabel ><strong>Tipo do Pedido</strong></FormLabel>
+        <FormLabel><strong>Tipo do Pedido</strong></FormLabel>
               <RadioGroup aria-label="gender" name="gender1" value={tipo} onChange={mudarPedido}>
                   <FormControlLabel value="0" control={<Radio />} label="Recarga" />
                   <FormControlLabel value="1" control={<Radio />} label="Cartao" />
@@ -141,10 +142,8 @@ const DatatablePage = () => {
   </div>
 
     
-
-
-
-    <MDBDataTable
+  <div class="container">
+  <MDBDataTable
       striped
       bordered
       hover
@@ -152,7 +151,7 @@ const DatatablePage = () => {
       data={data}
       
     />
-
+  </div>
     </div>
     
   );
