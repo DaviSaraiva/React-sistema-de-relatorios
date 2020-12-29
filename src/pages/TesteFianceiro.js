@@ -83,7 +83,7 @@ const DatatablePage = () => {
   }
 
   const filtro=(evento)=>{
-    axios.post('http://localhost:8081/finaceirogeral',{'inicial':inicial,'final':final,'tipo':tipo,'status':status}).then(response => {
+    axios.post('http://139.162.233.71:8081/finaceirogeral',{'inicial':inicial,'final':final,'tipo':tipo,'status':status}).then(response => {
         setInformacoes(response.data)
     });
     

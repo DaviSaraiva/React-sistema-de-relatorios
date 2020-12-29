@@ -76,12 +76,12 @@ const DatatablePage = () => {
     data["rows"].push(
       {
         id: ++indice,
-        name: pedido.pessoa.NOME,
-        cpf: pedido.pessoa.CPF,
+        name: pedido.ERN_T_CAD_PESSOA.NOME,
+        cpf: pedido.ERN_T_CAD_PESSOA.CPF,
         TipPed:tradutor,
         valor:"R$ " + pedido.VALOR_TOTAL,
         TipPag:tipoP,
-        cel:pedido.pessoa.CELULAR,
+        cel:pedido.ERN_T_CAD_PESSOA.CELULAR,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
         datPag:dt,
         mens:pedido.MENSAGEM_PAGAMENTO,

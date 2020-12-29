@@ -79,10 +79,10 @@ const DatatablePage = () => {
     data["rows"].push(
       {
         id: ++indice,
-        name: pedido.pessoa.NOME,
-        cpf: pedido.pessoa.CPF,
-        email:pedido.pessoa.EMAIL,
-        cel:pedido.pessoa.CELULAR,
+        name: pedido.ERN_T_CAD_PESSOA.NOME,
+        cpf: pedido.ERN_T_CAD_PESSOA.CPF,
+        email:pedido.ERN_T_CAD_PESSOA.EMAIL,
+        cel:pedido.ERN_T_CAD_PESSOA.CELULAR,
         TipPed:tradutor,
         datPed:format(new Date(pedido.DATA_PEDIDO), 'dd/MM/yyyy'),
         datPag:dt,
