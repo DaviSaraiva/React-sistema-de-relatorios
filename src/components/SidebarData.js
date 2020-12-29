@@ -61,18 +61,6 @@ export const SidebarData=[
         icon:<AiIcons.AiFillProfile />,
         cName:'nav-text'
     },
-    // {
-    //     title:'Relatório Finaceiro Recarga',
-    //     path:  '/finrecargas',//caminho no caso
-    //     icon:<AiIcons.AiFillProfile />,
-    //     cName:'nav-text'
-    // },
-    // {
-    //     title:'Relatório Finaceiro de Cartões',
-    //     path:  '/finecartoes',//caminho no caso
-    //     icon:<AiIcons.AiFillProfile />,
-    //     cName:'nav-text'
-    // },
     {
         title:'Relatório Finaceiro Geral',
         path:  '/finaceirogeral',//caminho no caso

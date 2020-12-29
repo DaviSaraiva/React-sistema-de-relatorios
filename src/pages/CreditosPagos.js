@@ -84,7 +84,7 @@ const DatatablePage = () => {
     
     data["rows"].push(
       {
-        id: pedido.ID_PEDIDO,
+        id: ++indice,
         name: pedido.pessoa.NOME,
         cpf: pedido.pessoa.CPF,
         TipPed:tradutor,
