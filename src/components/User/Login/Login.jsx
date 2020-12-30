@@ -9,7 +9,7 @@ function initialState() {
 }
 
 function login({ user, password }) {
-  if (user === 'usuariomobi' && password === 'transmobi52!@#') {
+  if (user.toLowerCase() === 'usuariomobi' && password.toLowerCase() === 'transmobi52!@#') {
     return { token: '1234' };
   }
   return { error: 'Usuario ou senha incorretos' };
